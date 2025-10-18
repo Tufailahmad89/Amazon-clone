@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malabis - India's Own E-Commerce</title>
+    <link rel="stylesheet" href="amazon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+          w      <div class="header-top-left">
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span data-en="Deliver to" data-hi="डिलीवर टू">Deliver to</span>
+                            <span class="location-bold" data-en="India" data-hi="भारत">India</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-top-right">
+                    <div class="language-toggle" id="languageToggle">
+                        <span class="lang-option active" data-lang="en">EN</span>
+                        <span class="lang-separator">|</span>
+                        <span class="lang-option" data-lang="hi">हिं</span>
+                    </div>
+                    <div class="signin" id="openLoginModal">
+                        <span data-en="Hello, Sign in" data-hi="नमस्ते, साइन इन करें">Hello, Sign in</span>
+                        <span class="bold" data-en="Account & Lists" data-hi="खाता और सूचियाँ">Account & Lists</span>
+                    </div>
+                    <div class="orders">
+                        <span data-en="Returns" data-hi="रिटर्न">Returns</span>
+                        <span class="bold" data-en="& Orders" data-hi="और ऑर्डर">& Orders</span>
+                    </div>
+                    <div class="cart" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <span class="cart-text" data-en="Cart" data-hi="कार्ट">Cart</span>
+                    </div>
+                    <div class="dark-mode-toggle" id="darkModeToggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1 class="malabis-logo">Malabis</h1>
+                    </a>
+                </div>
+                <div class="search-box">
+                    <select class="search-dropdown">
+                        <option data-en="All" data-hi="सभी">All</option>
+                        <option data-en="Books" data-hi="किताबें">Books</option>
+                        <option data-en="Electronics" data-hi="इलेक्ट्रॉनिक्स">Electronics</option>
+                        <option data-en="Clothing" data-hi="कपड़े">Clothing</option>
+                        <option data-en="Home & Kitchen" data-hi="घर और रसोई">Home & Kitchen</option>
+                    </select>
+                    <input type="text" placeholder="Search Malabis..." data-hi-placeholder="मैलाबिस पर खोजें..." class="search-input">
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="nav-menu">
+                    <div class="nav-item" data-en="Today's Deals" data-hi="आज के ऑफर">Today's Deals</div>
+                    <div class="nav-item" data-en="Customer Service" data-hi="ग्राहक सेवा">Customer Service</div>
+                    <div class="nav-item" data-en="Registry" data-hi="रजिस्ट्री">Registry</div>
+                    <div class="nav-item" data-en="Gift Cards" data-hi="गिफ्ट कार्ड">Gift Cards</div>
+                    <div class="nav-item" data-en="Sell" data-hi="बेचें">Sell</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_45M_v2_1x._CB432458380_.jpg" alt="Malabis Hero Banner">
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title" data-en="Featured Products Today" data-hi="आज के फीचर्ड उत्पाद">Featured Products Today</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be inserted here via JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 data-en="Your Shopping Cart" data-hi="आपकी खरीदारी कार्ट">Your Shopping Cart</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-en="Total Amount:" data-hi="कुल राशि:">Total Amount:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="checkout-btn" data-en="Proceed to Checkout" data-hi="चेकआउट पर जाएं">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeLoginModal">&times;</span>
+            <h2 data-en="Sign In" data-hi="साइन इन करें">Sign In</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email or mobile number" data-hi-placeholder="ईमेल या मोबाइल नंबर" required>
+                <input type="password" placeholder="Password" data-hi-placeholder="पासवर्ड" required>
+                <button type="submit" class="signin-btn" data-en="Sign In" data-hi="साइन इन करें">Sign In</button>
+                <div class="forgot-password">
+                    <a href="#" data-en="Forgot your password?" data-hi="पासवर्ड भूल गए?">Forgot your password?</a>
+                </div>
+                <div class="divider">
+                    <span data-en="OR" data-hi="या">OR</span>
+                </div>
+                <button type="button" class="signup-btn" id="showSignup" data-en="Create your Malabis account" data-hi="अपना मैलाबिस खाता बनाएं">Create your Malabis account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4 data-en="Get to Know Us" data-hi="हमारे बारे में">Get to Know Us</h4>
+                    <ul>
+                        <li><a href="#" data-en="Careers" data-hi="करियर">Careers</a></li>
+                        <li><a href="#" data-en="Blog" data-hi="ब्लॉग">Blog</a></li>
+                        <li><a href="#" data-en="About Malabis" data-hi="मैलाबिस के बारे में">About Malabis</a></li>
+                        <li><a href="#" data-en="Investor Relations" data-hi="निवेशक संबंध">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Make Money with Us" data-hi="हमारे साथ पैसे कमाएं">Make Money with Us</h4>
+                    <ul>
+                        <li><a href="#" data-en="Sell on Malabis" data-hi="मैलाबिस पर बेचें">Sell on Malabis</a></li>
+                        <li><a href="#" data-en="Sell on Malabis Business" data-hi="मैलाबिस बिजनेस पर बेचें">Sell on Malabis Business</a></li>
+                        <li><a href="#" data-en="Sell apps on Malabis" data-hi="मैलाबिस पर ऐप्स बेचें">Sell apps on Malabis</a></li>
+                        <li><a href="#" data-en="Become an Affiliate" data-hi="एक एफिलिएट बनें">Become an Affiliate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Malabis Payment Products" data-hi="मैलाबिस भुगतान उत्पाद">Malabis Payment Products</h4>
+                    <ul>
+                        <li><a href="#" data-en="Malabis Pay Later" data-hi="मैलाबिस पे लेटर">Malabis Pay Later</a></li>
+                        <li><a href="#" data-en="Shop with Rewards" data-hi="रिवॉर्ड्स के साथ खरीदारी करें">Shop with Rewards</a></li>
+                        <li><a href="#" data-en="Reload Your Balance" data-hi="अपना बैलेंस रिलोड करें">Reload Your Balance</a></li>
+                        <li><a href="#" data-en="Malabis Currency Converter" data-hi="मैलाबिस करेंसी कन्वर्टर">Malabis Currency Converter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Let Us Help You" data-hi="हम आपकी मदद करें">Let Us Help You</h4>
+                    <ul>
+                        <li><a href="#" data-en="Malabis and COVID-19" data-hi="मैलाबिस और COVID-19">Malabis and COVID-19</a></li>
+                        <li><a href="#" data-en="Your Account" data-hi="आपका खाता">Your Account</a></li>
+                        <li><a href="#" data-en="Your Orders" data-hi="आपके ऑर्डर">Your Orders</a></li>
+                        <li><a href="#" data-en="Help" data-hi="मदद">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <h3>Malabis</h3>
+                </div>
+                <div class="footer-copyright">
+                    <p data-en="© 1996-2024, Malabis India, Inc. or its affiliates" data-hi="© 1996-2024, मैलाबिस इंडिया, इंक या इसकी सहायक कंपनियाँ">© 1996-2024, Malabis India, Inc. or its affiliates</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="amazon.js"></script>
+</body>
+</html>
